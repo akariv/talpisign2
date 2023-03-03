@@ -12,8 +12,12 @@
   <input type="text" [(ngModel)]="phone" name="phone" placeholder="מספר טלפון" required>  
 </div>
 <div class='section'>
-  <label for="year">דרגה / תואר</label>
-  <input type="text" [(ngModel)]="degree" name="degree" placeholder="דרגה / תואר" required>
+  <label for="degree">דרגה</label>
+  <input type="text" [(ngModel)]="degree" name="degree" placeholder="דרגה" required>
+</div>
+<div class='section'>
+  <label for="otherletter">האם כבר חתמת על מכתב המתנגד לרפורמה המשפטית בצורתה הנוכחית?<br/>אם כן, איזה? (נדרש כדי להקל על ווידוא של שמות החותמים)</label>
+  <input type="text" [(ngModel)]="otherletter" name="otherletter" placeholder="שם המכתב" required>
 </div>
 <div class='section h'>
   <input type="checkbox" [(ngModel)]="approved" required>
@@ -22,6 +26,10 @@
 <div class='section h'>
   <input type="checkbox" [(ngModel)]="approved2" required>
   <p>{{legalese2}}</p>
+</div>
+<div class='section h'>
+  <input type="checkbox" [(ngModel)]="volunteer" required>
+  <p>{{volunteer_text}}</p>
 </div>
 <div class='submit' [class.visible]='ready()'>
   <a class='gmail layout-desktop' [href]='gmailurl' target="_blank">שליחה דרך ג׳ימייל</a>
