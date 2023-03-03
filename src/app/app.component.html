@@ -1,0 +1,29 @@
+<h1>אישור חתימה</h1>
+<div class='section'>
+  <label for='name'>שם מלא בעברית</label>
+  <input type="text" [(ngModel)]="name" name="name" placeholder="שם מלא: פרטי ומשפחה" required>
+</div>
+<div class='section ltr'>
+  <label for='name_en'>שם מלא באנגלית</label>
+  <input type="text" [(ngModel)]="name_en" name="name_en" placeholder="שם מלא באנגלית: פרטי ומשפחה" required>
+</div>
+<div class='section'>
+  <label for="phone">מספר טלפון (לאימות בלבד)</label>
+  <input type="text" [(ngModel)]="phone" name="phone" placeholder="מספר טלפון" required>  
+</div>
+<div class='section'>
+  <label for="year">דרגה / תואר</label>
+  <input type="text" [(ngModel)]="degree" name="degree" placeholder="דרגה / תואר" required>
+</div>
+<div class='section h'>
+  <input type="checkbox" [(ngModel)]="approved" required>
+  <p>{{legalese}}</p>
+</div>
+<div class='section h'>
+  <input type="checkbox" [(ngModel)]="approved2" required>
+  <p>{{legalese2}}</p>
+</div>
+<div class='submit' [class.visible]='ready()'>
+  <a class='gmail layout-desktop' [href]='gmailurl' target="_blank">שליחה דרך ג׳ימייל</a>
+  <a class='email' [href]='emailurl' target="_blank">שליחה דרך תוכנת מייל</a>
+</div>
