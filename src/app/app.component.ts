@@ -17,6 +17,7 @@ export class AppComponent {
   volunteer = false;
 
   LETTER_OPTIONS = [
+    'בוגרי תלפיות',
     'לוחמי צוות אוויר',
     '669',
     'שלדג',

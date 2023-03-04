@@ -13,12 +13,12 @@
 </div>
 <div class='section'>
   <label for="degree">דרגה</label>
-  <input type="text" [(ngModel)]="degree" name="degree" placeholder="דרגה" required>
+  <input type="text" [(ngModel)]="degree" name="degree" placeholder="דרגה בעברית" required>
 </div>
 <div class='section'>
   <label for="signedletter">האם כבר חתמת על מכתב המתנגד לרפורמה המשפטית בצורתה הנוכחית?<br/>אם כן, איזה? (נדרש כדי להקל על ווידוא של שמות החותמים)</label>
   <select [(ngModel)]="signedletter" name="signedletter">
-    <option></option>
+    <option value=''>-- לא חתמתי על מכתב --</option>
     <option *ngFor="let letter of LETTER_OPTIONS" [value]="letter">{{letter}}</option>
     <option>אחר</option>
   </select>
