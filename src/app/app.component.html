@@ -16,8 +16,13 @@
   <input type="text" [(ngModel)]="degree" name="degree" placeholder="דרגה" required>
 </div>
 <div class='section'>
-  <label for="otherletter">האם כבר חתמת על מכתב המתנגד לרפורמה המשפטית בצורתה הנוכחית?<br/>אם כן, איזה? (נדרש כדי להקל על ווידוא של שמות החותמים)</label>
-  <input type="text" [(ngModel)]="otherletter" name="otherletter" placeholder="שם המכתב" required>
+  <label for="signedletter">האם כבר חתמת על מכתב המתנגד לרפורמה המשפטית בצורתה הנוכחית?<br/>אם כן, איזה? (נדרש כדי להקל על ווידוא של שמות החותמים)</label>
+  <select [(ngModel)]="signedletter" name="signedletter">
+    <option></option>
+    <option *ngFor="let letter of LETTER_OPTIONS" [value]="letter">{{letter}}</option>
+    <option>אחר</option>
+  </select>
+  <input type="text" [(ngModel)]="otherletter" name="otherletter" placeholder="שם המכתב" *ngIf='signedletter === "אחר"'>
 </div>
 <div class='section h'>
   <input type="checkbox" [(ngModel)]="approved" required>

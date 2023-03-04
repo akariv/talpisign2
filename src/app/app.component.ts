@@ -10,13 +10,31 @@ export class AppComponent {
   name_en: string = '';
   phone: string = '';
   degree: string = '';
+  signedletter: string = '';
   otherletter: string = '';
   approved = false;
   approved2 = false;
   volunteer = false;
 
+  LETTER_OPTIONS = [
+    'לוחמי צוות אוויר',
+    '669',
+    'שלדג',
+    'יהל״ם',
+    'בקרה ושליטה חיל אוויר',
+    'מ״מ',
+    'חט״מ',
+    '8200',
+    'אחים לנשק',
+    'מורן מיתר',
+    'סייבריסטים',
+    'דובדבן',
+    'רופאי מילואים',
+    'גמלאי המוסד',
+  ];
+
   get legalese(): string {
-    return 'אני מאשר/ת את חתימתי על מכתב הערכים המשותפים המתנגד לרפורמה המשפטית בתצורתה הנוכחית.';
+    return 'אני מאשר/ת את חתימתי על מכתב בקשת העזרה מידידינו בארה"ב במאבק להצלת הדמוקרטיה הישראלית.';
   }
 
   get legalese2(): string {
@@ -43,7 +61,7 @@ ${this.degree} ${this.name}
 ${this.name_en}
 ${this.phone}
 
-${this.otherletter ? 'חתמתי גם על מכתב: ' + this.otherletter : ''}
+${this.letter ? 'חתמתי גם על מכתב: ' + this.letter : ''}
 ${this.volunteer ? this.volunteer_text : ''}
 
 אפשר להוסיף אחרי שורה זו מידע נוסף שתרצו לספר לנו.`);
@@ -55,6 +73,16 @@ ${this.volunteer ? this.volunteer_text : ''}
   
   get emailurl(): string {
     return `mailto:${this.to}?subject=${this.subject}&body=${this.body}`;
+  }
+
+  get letter(): string {
+    if (this.signedletter) {
+      if (this.signedletter === 'אחר') {
+        return this.otherletter;
+      }
+      return this.signedletter;
+    }
+    return '';
   }
 
   ready() {
