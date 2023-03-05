@@ -18,6 +18,7 @@ export class AppComponent {
 
   LETTER_OPTIONS = [
     'בוגרי תלפיות',
+    'השריונרים',
     'לוחמי צוות אוויר',
     '669',
     'שלדג',
