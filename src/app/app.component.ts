@@ -15,7 +15,16 @@ export class AppComponent {
   approved = false;
   approved2 = false;
   volunteer = false;
-
+  DEGREE_OPTIONS = [
+    'סגן',
+    'סרן',
+    'רב-סרן',
+    'סגן-אלוף',
+    'אלוף-משנה',
+    'תת-אלוף',
+    'אלוף',
+    'רב-אלוף',
+  ];
   LETTER_OPTIONS = [
     'בוגרי תלפיות',
     'השריונרים',

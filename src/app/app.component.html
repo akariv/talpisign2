@@ -13,7 +13,12 @@
 </div>
 <div class='section'>
   <label for="degree">דרגה</label>
-  <input type="text" [(ngModel)]="degree" name="degree" placeholder="דרגה בעברית" required>
+  <select [(ngModel)]="degree" name="signedletter">
+    <option value=''>-- בחירת דרגה --</option>
+    <option value='x'>אני לא קצינ/ה במילואים</option>
+    <option *ngFor="let d of DEGREE_OPTIONS" [value]="d">{{d}}</option>
+  </select>
+  <span style='color:darkred;font-weight:300' *ngIf='degree==="x"'>החתימה אפשרית רק לקציני צה״ל במילואים</span>
 </div>
 <div class='section'>
   <label for="signedletter">האם כבר חתמת על מכתב המתנגד לרפורמה המשפטית בצורתה הנוכחית?<br/>אם כן, איזה? (נדרש כדי להקל על ווידוא של שמות החותמים)</label>
